@@ -8,11 +8,14 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D body;
     private Animator a;
     private bool isGrounded;
+    private bool isStill;
+    public int lives = 3;
 
     private void Start()
     {
         body = GetComponent<Rigidbody2D>();
         a = GetComponent<Animator>();
+        isStill = false;
     }
 
     // Update is called once per frame
@@ -41,6 +44,15 @@ public class PlayerController : MonoBehaviour
 
         // setting animation
         a.SetBool("run", horizontalInput != 0);
+
+        if (horizontalInput == 0)
+        {
+            isStill = true;
+        }
+        else
+        {
+            isStill = false;
+        }
     }
 
     private void Jump()
@@ -56,9 +68,24 @@ public class PlayerController : MonoBehaviour
         {
             isGrounded = true;
         }
+
+        if (collision.gameObject.CompareTag("Fire"))
+        {
+            Debug.Log("Player hit!");
+            lives--;
+            Debug.Log("Player hit! Lives: " + lives);
+            if (lives <= 0)
+            {
+                Debug.Log("Game Over!");
+            }
+        }
     }
 
     public bool canAttack(){
-        return horizontalInput == 0 && isGrounded;
+        if (isStill)
+        {
+            return true;
+        }
+        return true;
     }
 }
