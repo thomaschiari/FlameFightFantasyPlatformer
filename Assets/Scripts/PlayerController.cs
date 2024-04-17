@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     public int speed = 5;
     private Rigidbody2D body;
@@ -49,11 +49,16 @@ public class PlayerMovement : MonoBehaviour
         isGrounded = false;
     }
 
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
         }
+    }
+
+    public bool canAttack(){
+        return horizontalInput == 0 && isGrounded;
     }
 }
