@@ -18,4 +18,3 @@ FlameFightFantasy v.2 - Platformer Game
 
 ### Referências:
 - Alguns scripts do jogo foram inspirados no seguinte vídeo: [Unity 2D Platformer for Complete Beginners - #4 SHOOTING](https://www.youtube.com/watch?v=PUpC44Q64zY)
-- 
