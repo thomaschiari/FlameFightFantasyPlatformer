@@ -13,6 +13,10 @@ public class PlayerController : MonoBehaviour
     public int lives = 3;
     private int points = 0;
 
+    public int getPoints(){
+        return points;
+    }
+
     private void Start()
     {
         body = GetComponent<Rigidbody2D>();
