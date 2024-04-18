@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private bool isStill;
     public int lives = 3;
     private int points = 0;
+    public AudioSource jumpSoundSource;
 
     public int getPoints(){
         return points;
@@ -71,6 +72,7 @@ public class PlayerController : MonoBehaviour
     {
         body.velocity = new Vector2(body.velocity.x, speed*1.5f);
         isGrounded = false;
+        jumpSoundSource.Play();
     }
 
 
