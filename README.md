@@ -1,6 +1,11 @@
 # FlameFightFantasyPlatformer
 FlameFightFantasy v.2 - Platformer Game
 
+### Autores:
+- [Felipe Maluli](https://github.com/FeMCDias)
+- [Lucca Hiratsuca](https://github.com/LuccaHiratsuca)
+- [Thomas Chiari Ciocchetti de Souza](https://github.com/thomaschiari)
+
 ### Assets utilizados:
 - [Fire Sprite](https://opengameart.org/content/2d-pixel-fire-sprite-strip)
 - [Water Hits Fire](https://www.tunepocket.com/royalty-free-music/water-hits-fire/)
