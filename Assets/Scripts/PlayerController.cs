@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -53,6 +54,12 @@ public class PlayerController : MonoBehaviour
         {
             isStill = false;
         }
+
+        // verificar se o y do player é menor que -10
+        if (transform.position.y < -10)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
     }
 
     private void Jump()
@@ -71,12 +78,10 @@ public class PlayerController : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Fire"))
         {
-            Debug.Log("Player hit!");
             lives--;
-            Debug.Log("Player hit! Lives: " + lives);
             if (lives <= 0)
             {
-                Debug.Log("Game Over!");
+                SceneManager.LoadScene("GameOver");
             }
         }
     }
