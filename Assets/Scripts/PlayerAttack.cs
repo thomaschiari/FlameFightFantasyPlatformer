@@ -12,10 +12,13 @@ public class PlayerAttack : MonoBehaviour
     public float projectileDist = 0.1f;  // Distância do projétil em relação ao jogador
     private GameObject currentWaterProjectile; // Referência ao projétil atual
     public int waterQty = 5;
+    private AudioSource hose;
 
     private void Start()
     {
         playerController = GetComponent<PlayerController>();
+        hose = GetComponent<AudioSource>();
+
     }
 
     private void Update()
@@ -24,6 +27,7 @@ public class PlayerAttack : MonoBehaviour
         {
             Attack();
             waterQty--;
+            hose.Play();
         }
         else if (currentWaterProjectile != null)
         {
