@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
     private bool isStill;
     public int lives = 3;
+    private int points = 0;
 
     private void Start()
     {
@@ -92,5 +93,9 @@ public class PlayerController : MonoBehaviour
             return true;
         }
         return true;
+    }
+
+    public void addPoints(int points){
+        this.points += points;
     }
 }
